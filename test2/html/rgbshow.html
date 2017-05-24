@@ -1,0 +1,158 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>&#26174;&#31034;rgb&#22270;&#20687;&#30340;R,G,B&#21508;&#20010;&#20998;&#37327;</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-05-03"><meta name="DC.source" content="rgbshow.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:7%; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:16px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>&#26174;&#31034;rgb&#22270;&#20687;&#30340;R,G,B&#21508;&#20010;&#20998;&#37327;</h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#4">&#26816;&#26597;&#31532;&#19968;&#20010;&#21442;&#25968;&#65292;&#24517;&#39035;&#20026;rgb&#22270;&#20687;&#25968;&#25454;</a></li><li><a href="#5">&#25509;&#25910;&#22270;&#20687;</a></li><li><a href="#6">&#20998;&#31163;R,G,B</a></li><li><a href="#7">&#21152;&#20837;&#21442;&#25968;</a></li><li><a href="#8">&#26174;&#31034;</a></li></ul></div><pre class="codeinput"><span class="comment">%&#26174;&#31034;RGB&#21407;&#22270;&#20687;&#21450;&#21508;&#20010;&#20998;&#37327;&#22270;&#20687;</span>
+<span class="comment">%&#27880;&#24847;&#65306;&#22312;&#35843;&#29992;&#35813;&#20989;&#25968;&#21069;&#38656;&#20351;&#29992;figure()&#21019;&#24314;&#26032;&#31383;&#21475;</span>
+<span class="comment">%&#20363;&#22914;&#65306;I&#20026;rgb&#22270;&#20687;,&#21508;&#20010;&#20998;&#37327;&#20026;IR,IG,IB</span>
+<span class="comment">%       figure('name','1.&#20998;&#21035;&#26174;&#31034;R,G,B&#21508;&#20010;&#20998;&#37327;','NumberTitle','off');</span>
+<span class="comment">%       rgbshow(I);                    % R=IR,G=IG,B=IB</span>
+<span class="comment">%       figure('name','2.&#25913;&#21464;R,G,B&#21508;&#20010;&#20998;&#37327;','NumberTitle','off');</span>
+<span class="comment">%       rgbshow(I, 0.3, 0.4, 0.8);     % R=0.3IR,G=0.3IG,B=0.8IB</span>
+</pre><pre class="codeinput"><span class="keyword">function</span> rgbshow(varargin)
+</pre><h2>&#26816;&#26597;&#31532;&#19968;&#20010;&#21442;&#25968;&#65292;&#24517;&#39035;&#20026;rgb&#22270;&#20687;&#25968;&#25454;<a name="4"></a></h2><pre class="codeinput">    <span class="keyword">if</span> ischar(varargin{1})
+        hs=msgbox(<span class="string">'&#21442;&#25968;&#19981;&#21512;&#27861;&#65281;'</span>,<span class="string">'&#36890;&#30693;'</span>,<span class="string">'warn'</span>);
+        ht=findobj(hs,<span class="string">'type'</span>,<span class="string">'text'</span>);
+        set(ht,<span class="string">'FontSize'</span>,11);
+        <span class="comment">% &#31561;&#24453;&#30830;&#23450;</span>
+        uiwait(hs);
+        <span class="keyword">return</span>
+    <span class="keyword">end</span>
+</pre><h2>&#25509;&#25910;&#22270;&#20687;<a name="5"></a></h2><pre class="codeinput">    rgb=varargin{1};
+</pre><h2>&#20998;&#31163;R,G,B<a name="6"></a></h2><pre class="codeinput">    R=rgb(:,:,1);
+    G=rgb(:,:,2);
+    B=rgb(:,:,3);
+</pre><h2>&#21152;&#20837;&#21442;&#25968;<a name="7"></a></h2><pre class="codeinput">    <span class="keyword">if</span> nargin==4
+        R=varargin{2}*R;
+        G=varargin{3}*G;
+        B=varargin{4}*B;
+    <span class="keyword">end</span>
+</pre><h2>&#26174;&#31034;<a name="8"></a></h2><pre class="codeinput">    subplot(231);imshow(rgb);title(<span class="string">'&#21407;&#22270;&#20687;'</span>);
+    subplot(232);imshow(cat(3,R,G,B));title(<span class="string">'RGB&#21512;&#25104;&#22270;&#20687;'</span>);
+    <span class="keyword">if</span> nargin==4
+        subplot(234);imshow(R);title([num2str(varargin{2}),<span class="string">'R&#20998;&#37327;'</span>]);
+        subplot(235);imshow(G);title([num2str(varargin{3}),<span class="string">'G&#20998;&#37327;'</span>]);
+        subplot(236);imshow(B);title([num2str(varargin{4}),<span class="string">'B&#20998;&#37327;'</span>]);
+    <span class="keyword">else</span>
+        subplot(234);imshow(R);title(<span class="string">'R&#20998;&#37327;'</span>);
+        subplot(235);imshow(G);title(<span class="string">'G&#20998;&#37327;'</span>);
+        subplot(236);imshow(B);title(<span class="string">'B&#20998;&#37327;'</span>);
+    <span class="keyword">end</span>
+</pre></div><!--
+##### SOURCE BEGIN #####
+%% 显示rgb图像的R,G,B各个分量
+%
+%%
+
+%%
+%显示RGB原图像及各个分量图像
+%注意：在调用该函数前需使用figure()创建新窗口
+%例如：I为rgb图像,各个分量为IR,IG,IB
+%       figure('name','1.分别显示R,G,B各个分量','NumberTitle','off');
+%       rgbshow(I);                    % R=IR,G=IG,B=IB
+%       figure('name','2.改变R,G,B各个分量','NumberTitle','off');
+%       rgbshow(I, 0.3, 0.4, 0.8);     % R=0.3IR,G=0.3IG,B=0.8IB 
+%%
+
+
+function rgbshow(varargin)
+
+%% 检查第一个参数，必须为rgb图像数据
+    if ischar(varargin{1})
+        hs=msgbox('参数不合法！','通知','warn');
+        ht=findobj(hs,'type','text');
+        set(ht,'FontSize',11);
+        % 等待确定
+        uiwait(hs);
+        return 
+    end
+%% 接收图像
+    rgb=varargin{1};
+%% 分离R,G,B
+    R=rgb(:,:,1);
+    G=rgb(:,:,2);
+    B=rgb(:,:,3);
+%% 加入参数
+    if nargin==4
+        R=varargin{2}*R;
+        G=varargin{3}*G;
+        B=varargin{4}*B;
+    end
+%% 显示
+    subplot(231);imshow(rgb);title('原图像');
+    subplot(232);imshow(cat(3,R,G,B));title('RGB合成图像');
+    if nargin==4    
+        subplot(234);imshow(R);title([num2str(varargin{2}),'R分量']);
+        subplot(235);imshow(G);title([num2str(varargin{3}),'G分量']);
+        subplot(236);imshow(B);title([num2str(varargin{4}),'B分量']);
+    else
+        subplot(234);imshow(R);title('R分量');
+        subplot(235);imshow(G);title('G分量');
+        subplot(236);imshow(B);title('B分量'); 
+    end
+##### SOURCE END #####
+--></body></html>

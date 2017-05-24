@@ -1,0 +1,200 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>hsi&#26684;&#24335;&#36716;&#25442;&#25104;rgb&#26684;&#24335;</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-05-04"><meta name="DC.source" content="hsi2rgb.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:7%; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:16px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>hsi&#26684;&#24335;&#36716;&#25442;&#25104;rgb&#26684;&#24335;</h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">&#25552;&#21462;H,S,I&#21508;&#20010;&#20998;&#37327;</a></li><li><a href="#3">&#20026;R,G,B&#20998;&#37197;&#31354;&#38388;</a></li><li><a href="#4">&#24403; 0 &lt;= H &lt; 2*pi/3 &#26102;</a></li><li><a href="#5">&#24403; 2*pi/3 &lt;= H &lt; 4*pi/3 &#26102;</a></li><li><a href="#6">&#24403; 4*pi/3 &lt;= H &lt; 2*pi &#26102;</a></li><li><a href="#7">&#24402;&#19968;&#21270;</a></li><li><a href="#8">&#35774;&#32622; H S I &#21508;&#20010;&#20998;&#37327;&#31995;&#25968;</a></li><li><a href="#9">&#36755;&#20986;</a></li></ul></div><pre class="codeinput"><span class="keyword">function</span> [varargout]=hsi2rgb(varargin)
+</pre><h2>&#25552;&#21462;H,S,I&#21508;&#20010;&#20998;&#37327;<a name="2"></a></h2><pre class="codeinput">    <span class="keyword">switch</span> nargin
+        <span class="keyword">case</span> 1
+            H=varargin{1}(:,:,1);
+            S=varargin{1}(:,:,2);
+            I=varargin{1}(:,:,3);
+        <span class="keyword">case</span> 3
+            H=varargin{1};
+            S=varargin{2};
+            I=varargin{3};
+    <span class="keyword">end</span>
+    <span class="comment">% &#23545;H&#20998;&#37327;&#21453;&#24402;&#19968;&#21270;</span>
+        H=2*pi*H;
+</pre><h2>&#20026;R,G,B&#20998;&#37197;&#31354;&#38388;<a name="3"></a></h2><p>size(hsi, 1) &#34920;&#31034;&#21462;&#20989;&#25968;&#36820;&#22238;&#20540;&#30340;&#31532;&#19968;&#20010;&#21442;&#25968;</p><pre class="codeinput">    R = zeros(size(H, 1), size(H, 2));
+    G = R;
+    B = R;
+</pre><h2>&#24403; 0 &lt;= H &lt; 2*pi/3 &#26102;<a name="4"></a></h2><pre class="codeinput">    <span class="comment">%i = find( (0 &lt;= H) &amp; (H &lt; 2*pi/3));</span>
+    <span class="comment">%&#20808;&#23558;H&#36716;&#21270;&#20026;&#19968;&#32500;&#34892;&#30697;&#38453;</span>
+    <span class="comment">%&#28982;&#21518;&#26597;&#25214;H&#20013;&#22312;0 &lt;= H &lt; 2*pi/3&#20043;&#38388;&#30340;&#20803;&#32032;&#24182;&#36820;&#22238;&#20854;&#19968;&#32500;&#19979;&#26631;&#32034;&#24341;</span>
+    <span class="comment">%i&#20026;&#19968;&#32500;&#21015;&#30697;&#38453;</span>
+    i = find( (H &gt;= 0) &amp; (H &lt; 2*pi/3));
+    B(i) = I(i) .* (1 - S(i));
+    R(i) = I(i) .* (1 + S(i) .* cos(H(i)) ./ cos(pi/3 - H(i)));
+    G(i) = 3*I(i) - R(i) - B(i);
+</pre><h2>&#24403; 2*pi/3 &lt;= H &lt; 4*pi/3 &#26102;<a name="5"></a></h2><pre class="codeinput">    i = find( (H &gt;= 2*pi/3) &amp; (H &lt; 4*pi/3) );
+    R(i) = I(i) .* (1 - S(i));
+    G(i) = I(i) .* (1 + S(i) .* cos(H(i) - 2*pi/3) ./ cos(pi - H(i)));
+    B(i) = 3*I(i) - R(i) - G(i);
+</pre><h2>&#24403; 4*pi/3 &lt;= H &lt; 2*pi &#26102;<a name="6"></a></h2><pre class="codeinput">    i = find( (4*pi/3 &lt;= H) &amp; (H &lt;= 2*pi));
+    G(i) = I(i) .* (1 - S(i));
+    B(i) = I(i) .* (1 + S(i) .* cos(H(i) - 4*pi/3) ./cos(5*pi/3 - H(i)));
+    R(i) = 3*I(i) - G(i) - B(i);
+</pre><h2>&#24402;&#19968;&#21270;<a name="7"></a></h2><pre class="codeinput"><span class="comment">%min(RGB, 1) &#20445;&#30041;&#23567;&#20110;1&#30340;&#65292;&#23558;RGB&#20013;&#22823;&#20110;1&#30340;&#20540;&#36171;&#20540;&#20026;1</span>
+<span class="comment">%max(RGB, 0) &#20445;&#30041;&#22823;&#20110;0&#30340;&#65292;&#23558;RGB&#20013;&#23567;&#20110;0&#30340;&#20540;&#36171;&#20540;&#20026;0</span>
+    RGB = max(min(cat(3, R, G, B), 1), 0);
+</pre><h2>&#35774;&#32622; H S I &#21508;&#20010;&#20998;&#37327;&#31995;&#25968;<a name="8"></a></h2><pre class="codeinput">    <span class="keyword">if</span> nargin==4
+        R=varargin{2}*R;
+        G=varargin{3}*G;
+        B=varargin{4}*B;
+    <span class="keyword">end</span>
+</pre><h2>&#36755;&#20986;<a name="9"></a></h2><p>out=[RGB,B,G,B];</p><pre class="codeinput">    <span class="keyword">switch</span> nargout
+        <span class="keyword">case</span> 1
+            varargout{1}=RGB;
+        <span class="keyword">case</span> 3
+            varargout{1}=R;
+            varargout{2}=G;
+            varargout{3}=B;
+        <span class="keyword">case</span> 4
+            varargout{1}=RGB;
+            varargout{2}=R;
+            varargout{3}=G;
+            varargout{4}=B;
+    <span class="keyword">end</span>
+</pre></div><!--
+##### SOURCE BEGIN #####
+%% hsi格式转换成rgb格式
+%    
+%%
+
+function [varargout]=hsi2rgb(varargin)
+%% 提取H,S,I各个分量
+    switch nargin
+        case 1
+            H=varargin{1}(:,:,1);
+            S=varargin{1}(:,:,2);
+            I=varargin{1}(:,:,3);
+        case 3
+            H=varargin{1};
+            S=varargin{2};
+            I=varargin{3};
+    end
+    % 对H分量反归一化
+        H=2*pi*H;
+
+%% 为R,G,B分配空间
+    % size(hsi, 1) 表示取函数返回值的第一个参数
+    R = zeros(size(H, 1), size(H, 2));   
+    G = R;   
+    B = R;   
+    
+%% 当 0 <= H < 2*pi/3 时 
+    %i = find( (0 <= H) & (H < 2*pi/3));
+    %先将H转化为一维行矩阵
+    %然后查找H中在0 <= H < 2*pi/3之间的元素并返回其一维下标索引
+    %i为一维列矩阵
+    i = find( (H >= 0) & (H < 2*pi/3));   
+    B(i) = I(i) .* (1 - S(i));   
+    R(i) = I(i) .* (1 + S(i) .* cos(H(i)) ./ cos(pi/3 - H(i)));   
+    G(i) = 3*I(i) - R(i) - B(i);
+    
+%% 当 2*pi/3 <= H < 4*pi/3 时   
+    i = find( (H >= 2*pi/3) & (H < 4*pi/3) );
+    R(i) = I(i) .* (1 - S(i));   
+    G(i) = I(i) .* (1 + S(i) .* cos(H(i) - 2*pi/3) ./ cos(pi - H(i)));   
+    B(i) = 3*I(i) - R(i) - G(i);  
+    
+%% 当 4*pi/3 <= H < 2*pi 时 
+    i = find( (4*pi/3 <= H) & (H <= 2*pi));   
+    G(i) = I(i) .* (1 - S(i));   
+    B(i) = I(i) .* (1 + S(i) .* cos(H(i) - 4*pi/3) ./cos(5*pi/3 - H(i)));   
+    R(i) = 3*I(i) - G(i) - B(i);   
+     
+%% 归一化
+%min(RGB, 1) 保留小于1的，将RGB中大于1的值赋值为1 
+%max(RGB, 0) 保留大于0的，将RGB中小于0的值赋值为0
+    RGB = max(min(cat(3, R, G, B), 1), 0); 
+                               
+
+%% 设置 H S I 各个分量系数
+    if nargin==4
+        R=varargin{2}*R;
+        G=varargin{3}*G;
+        B=varargin{4}*B;
+    end
+
+%% 输出
+% out=[RGB,B,G,B];
+    switch nargout
+        case 1
+            varargout{1}=RGB;
+        case 3
+            varargout{1}=R;
+            varargout{2}=G;
+            varargout{3}=B;
+        case 4
+            varargout{1}=RGB;
+            varargout{2}=R;
+            varargout{3}=G;
+            varargout{4}=B;
+    end
+##### SOURCE END #####
+--></body></html>

@@ -1,0 +1,196 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>HSI&#26684;&#24335; RGB &#26684;&#24335;</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-05-04"><meta name="DC.source" content="main.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:7%; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:16px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>HSI&#26684;&#24335; RGB &#26684;&#24335;</h1><!--introduction--><p><b>&#23454;&#29616;&#22270;&#20687;&#22312;HSI&#26684;&#24335;&#21644;RGB&#26684;&#24335;&#20043;&#38388;&#30340;&#30456;&#20114;&#36716;&#25442;</b></p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">&#21152;&#36733;&#22270;&#20687;</a></li><li><a href="#3"><b>1.&#20998;&#21035;&#26174;&#31034;R,G,B</b></a></li><li><a href="#5"><b>2.&#25913;&#21464;&#33394;&#24425;</b></a></li><li><a href="#7"><b>3.RGB&#26684;&#24335;&#19982;HSI&#26684;&#24335;&#20043;&#38388;&#30340;&#36716;&#25442;</b></a></li><li><a href="#8">RGB ==&gt; HSI</a></li><li><a href="#10">HSI ==&gt; RGB</a></li><li><a href="#11"><b>4. &#25913;&#21464;&#33394;&#35843;&#65292;&#39281;&#21644;&#24230;&#21644;&#23494;&#24230;</b></a></li><li><a href="#12">&#31532;&#19968;&#32452;</a></li><li><a href="#14">&#31532;&#20108;&#32452;</a></li></ul></div><pre class="codeinput"><span class="keyword">function</span> main()
+</pre><h2>&#21152;&#36733;&#22270;&#20687;<a name="2"></a></h2><pre class="codeinput">rgb=imread(<span class="string">'peppers.png'</span>);
+</pre><h2><b>1.&#20998;&#21035;&#26174;&#31034;R,G,B</b><a name="3"></a></h2><p><a href="..\html\rgbshow.html">rgbshow()</a></p><pre class="codeinput">    figure(<span class="string">'name'</span>,<span class="string">'1.&#20998;&#21035;&#26174;&#31034;R,G,B&#21508;&#20010;&#20998;&#37327;'</span>,<span class="string">'NumberTitle'</span>,<span class="string">'off'</span>);
+    rgb1=rgb;
+    rgbshow(rgb1);
+</pre><p><img vspace="5" hspace="5" src="..\1.bmp" alt=""> </p><h2><b>2.&#25913;&#21464;&#33394;&#24425;</b><a name="5"></a></h2><p><a href="..\html\rgbshow.html">rgbshow()</a></p><pre class="codeinput"><span class="comment">%R1=0.3R</span>
+<span class="comment">%G1=0.4G</span>
+<span class="comment">%B1=0.8B</span>
+    figure(<span class="string">'name'</span>,<span class="string">'2.&#25913;&#21464;R,G,B&#21508;&#20010;&#20998;&#37327;'</span>,<span class="string">'NumberTitle'</span>,<span class="string">'off'</span>);
+    rgb2=rgb;
+    rgbshow(rgb2,0.3,0.4,0.8);
+</pre><p><img vspace="5" hspace="5" src="..\2.bmp" alt=""> </p><h2><b>3.RGB&#26684;&#24335;&#19982;HSI&#26684;&#24335;&#20043;&#38388;&#30340;&#36716;&#25442;</b><a name="7"></a></h2><h2>RGB ==&gt; HSI<a name="8"></a></h2><p><a href="..\html\rgb2hsi.html">rgb2hsi()</a></p><pre class="codeinput">    figure(<span class="string">'name'</span>,<span class="string">'3.RGB&#36716;HSI&#26684;&#24335;'</span>,<span class="string">'NumberTitle'</span>,<span class="string">'off'</span>);
+    rgb3=rgb;
+    [H,S,I]=rgb2hsi(rgb3);
+    subplot(221);imshow(rgb3);title(<span class="string">'RGB&#21407;&#22270;&#20687;'</span>);
+    subplot(222);imshow(H);title(<span class="string">'H&#20998;&#37327;'</span>);
+    subplot(223);imshow(S);title(<span class="string">'S&#20998;&#37327;'</span>);
+    subplot(224);imshow(I);title(<span class="string">'I&#20998;&#37327;'</span>);
+</pre><p><img vspace="5" hspace="5" src="..\3.bmp" alt=""> </p><h2>HSI ==&gt; RGB<a name="10"></a></h2><p><a href="..\html\hsi2rgb.html">hsi2rgb()</a></p><pre class="codeinput"><span class="comment">%figure('name','3.HSI&#36716;RGB&#26684;&#24335;','NumberTitle','off');</span>
+<span class="comment">%[RGB,R,G,B]=hsi2rgb(H,S,I);</span>
+<span class="comment">%subplot(221);imshow(cat(3,H,S,I));title('HSI&#21407;&#22270;&#20687;');</span>
+<span class="comment">%subplot(222);imshow(R);title('R&#20998;&#37327;');</span>
+<span class="comment">%subplot(223);imshow(G);title('G&#20998;&#37327;');</span>
+<span class="comment">%subplot(224);imshow(B);title('B&#20998;&#37327;');</span>
+<span class="comment">%figure('name','HSI&#36716;RGB&#26684;&#24335;&#21518;&#22270;&#20687;','NumberTitle','off');</span>
+<span class="comment">%imshow(RGB);</span>
+</pre><h2><b>4. &#25913;&#21464;&#33394;&#35843;&#65292;&#39281;&#21644;&#24230;&#21644;&#23494;&#24230;</b><a name="11"></a></h2><pre class="codeinput">    rgb4=rgb;
+</pre><h2>&#31532;&#19968;&#32452;<a name="12"></a></h2><p><a href="..\html\rgb2hsi.html">rgb2hsi()</a></p><pre class="codeinput">    figure(<span class="string">'name'</span>,<span class="string">'4.RGB&#36716;HSI&#26684;&#24335;&#20462;&#25913;&#21442;&#25968;1'</span>,<span class="string">'NumberTitle'</span>,<span class="string">'off'</span>);
+    [H,S,I]=rgb2hsi(rgb4,0.8,0.4,0.31);
+    subplot(221);imshow(rgb3);title(<span class="string">'RGB&#21407;&#22270;&#20687;'</span>);
+    subplot(222);imshow(H);title(<span class="string">'H&#20998;&#37327;'</span>);
+    subplot(223);imshow(S);title(<span class="string">'S&#20998;&#37327;'</span>);
+    subplot(224);imshow(I);title(<span class="string">'I&#20998;&#37327;'</span>);
+</pre><p><img vspace="5" hspace="5" src="..\4.1.bmp" alt=""> </p><h2>&#31532;&#20108;&#32452;<a name="14"></a></h2><p><a href="..\html\rgb2hsi.html">rgb2hsi()</a></p><pre class="codeinput">    figure(<span class="string">'name'</span>,<span class="string">'4.RGB&#36716;HSI&#26684;&#24335;&#20462;&#25913;&#21442;&#25968;2'</span>,<span class="string">'NumberTitle'</span>,<span class="string">'off'</span>);
+    [H,S,I]=rgb2hsi(rgb4,1.5,1.1,1.5);
+    subplot(221);imshow(rgb3);title(<span class="string">'RGB&#21407;&#22270;&#20687;'</span>);
+    subplot(222);imshow(H);title(<span class="string">'H&#20998;&#37327;'</span>);
+    subplot(223);imshow(S);title(<span class="string">'S&#20998;&#37327;'</span>);
+    subplot(224);imshow(I);title(<span class="string">'I&#20998;&#37327;'</span>);
+</pre><p><img vspace="5" hspace="5" src="..\4.2.bmp" alt=""> </p></div><!--
+##### SOURCE BEGIN #####
+%% HSI格式 RGB 格式
+% *实现图像在HSI格式和RGB格式之间的相互转换*
+%%
+
+function main()
+%% 加载图像
+rgb=imread('peppers.png');
+
+%% *1.分别显示R,G,B*
+% <..\html\rgbshow.html rgbshow()> 
+    figure('name','1.分别显示R,G,B各个分量','NumberTitle','off');
+    rgb1=rgb;
+    rgbshow(rgb1);      
+    %%
+    % 
+    % <<..\1.bmp>>
+    % 
+
+%% *2.改变色彩*
+% <..\html\rgbshow.html rgbshow()>
+%R1=0.3R
+%G1=0.4G
+%B1=0.8B
+    figure('name','2.改变R,G,B各个分量','NumberTitle','off');
+    rgb2=rgb;
+    rgbshow(rgb2,0.3,0.4,0.8);  
+    %%
+    % 
+    % <<..\2.bmp>>
+    % 
+
+%% *3.RGB格式与HSI格式之间的转换*
+    
+    %% RGB ==> HSI
+    % <..\html\rgb2hsi.html rgb2hsi()>
+    figure('name','3.RGB转HSI格式','NumberTitle','off');
+    rgb3=rgb;
+    [H,S,I]=rgb2hsi(rgb3);
+    subplot(221);imshow(rgb3);title('RGB原图像');
+    subplot(222);imshow(H);title('H分量');
+    subplot(223);imshow(S);title('S分量'); 
+    subplot(224);imshow(I);title('I分量');    
+    %%
+    % 
+    % <<..\3.bmp>>
+    % 
+    %% HSI ==> RGB
+    % <..\html\hsi2rgb.html hsi2rgb()>
+%figure('name','3.HSI转RGB格式','NumberTitle','off');
+%[RGB,R,G,B]=hsi2rgb(H,S,I);
+%subplot(221);imshow(cat(3,H,S,I));title('HSI原图像');
+%subplot(222);imshow(R);title('R分量');
+%subplot(223);imshow(G);title('G分量'); 
+%subplot(224);imshow(B);title('B分量');   
+%figure('name','HSI转RGB格式后图像','NumberTitle','off');
+%imshow(RGB);
+    
+%% *4. 改变色调，饱和度和密度*
+    rgb4=rgb;
+    %% 第一组
+    % <..\html\rgb2hsi.html rgb2hsi()>
+    figure('name','4.RGB转HSI格式修改参数1','NumberTitle','off');    
+    [H,S,I]=rgb2hsi(rgb4,0.8,0.4,0.31);
+    subplot(221);imshow(rgb3);title('RGB原图像');
+    subplot(222);imshow(H);title('H分量');
+    subplot(223);imshow(S);title('S分量'); 
+    subplot(224);imshow(I);title('I分量');     
+    %%
+    % 
+    % <<..\4.1.bmp>>
+    % 
+    
+    %% 第二组
+    % <..\html\rgb2hsi.html rgb2hsi()>
+    figure('name','4.RGB转HSI格式修改参数2','NumberTitle','off');  
+    [H,S,I]=rgb2hsi(rgb4,1.5,1.1,1.5);
+    subplot(221);imshow(rgb3);title('RGB原图像');      
+    subplot(222);imshow(H);title('H分量');
+    subplot(223);imshow(S);title('S分量'); 
+    subplot(224);imshow(I);title('I分量'); 
+    %%
+    % 
+    % <<..\4.2.bmp>>
+    %     
+
+##### SOURCE END #####
+--></body></html>

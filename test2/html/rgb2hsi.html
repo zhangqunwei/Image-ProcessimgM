@@ -1,0 +1,184 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>rgb&#26684;&#24335;&#36716;&#25442;&#25104;hsi&#26684;&#24335;</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-05-03"><meta name="DC.source" content="rgb2hsi.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:7%; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:16px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>rgb&#26684;&#24335;&#36716;&#25442;&#25104;hsi&#26684;&#24335;</h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">&#26816;&#26597;&#31532;&#19968;&#20010;&#21442;&#25968;&#65292;&#24517;&#39035;&#20026;rgb&#22270;&#20687;&#25968;&#25454;</a></li><li><a href="#3">&#25552;&#21462;R G B &#20998;&#37327;</a></li><li><a href="#4">&#35745;&#31639; H S I</a></li><li><a href="#5">&#35774;&#32622; H S I &#21508;&#20010;&#20998;&#37327;&#31995;&#25968;</a></li><li><a href="#6">&#36755;&#20986;</a></li></ul></div><pre class="codeinput"><span class="keyword">function</span> [varargout]=rgb2hsi(varargin)
+</pre><h2>&#26816;&#26597;&#31532;&#19968;&#20010;&#21442;&#25968;&#65292;&#24517;&#39035;&#20026;rgb&#22270;&#20687;&#25968;&#25454;<a name="2"></a></h2><pre class="codeinput">    <span class="keyword">if</span> ischar(varargin{1})
+        hs=msgbox(<span class="string">'&#21442;&#25968;&#19981;&#21512;&#27861;&#65281;'</span>,<span class="string">'&#36890;&#30693;'</span>,<span class="string">'warn'</span>);
+        ht=findobj(hs,<span class="string">'type'</span>,<span class="string">'text'</span>);
+        set(ht,<span class="string">'FontSize'</span>,11);
+        <span class="comment">% &#31561;&#24453;&#30830;&#23450;</span>
+        uiwait(hs);
+        <span class="keyword">return</span>
+    <span class="keyword">end</span>
+</pre><h2>&#25552;&#21462;R G B &#20998;&#37327;<a name="3"></a></h2><pre class="codeinput"><span class="comment">%im2double()&#21644;double()&#20989;&#25968;&#30340;&#21306;&#21035;&#65306;</span>
+<span class="comment">%im2double()&#23558;&#22270;&#20687;&#25968;&#25454;&#36716;&#25442;&#20026;double&#31867;&#22411;&#21518;&#23558;&#20854;&#37327;&#21270;&#21040;[0 1]&#21306;&#38388;&#20869;</span>
+<span class="comment">%double() &#21482;&#26159;&#25552;&#39640;&#25968;&#25454;&#31934;&#24230;&#65292;&#24182;&#26410;&#37327;&#21270;&#21040;[0 1]&#20043;&#38388;</span>
+    rgb=im2double(varargin{1});
+    R=rgb(:,:,1);
+    G=rgb(:,:,2);
+    B=rgb(:,:,3);
+</pre><h2>&#35745;&#31639; H S I<a name="4"></a></h2><p>&#35745;&#31639;H</p><pre class="codeinput">    H_num=(R-G)+(R-B)/2;
+    H_den=sqrt((R-G).^2+(R-B).*(G-B));
+    H=acos(H_num./(H_den+eps)); <span class="comment">% &#28155;&#21152;eps&#20989;&#25968;&#65292;&#38450;&#27490;&#20998;&#27597;&#20026;&#38646;</span>
+    H(B&gt;G)=2*pi-H(B&gt;G);
+    H=H/(2*pi);                 <span class="comment">% &#23558;H &#33539;&#22260;&#24402;&#19968;&#21270;&#20026;[0 1]</span>
+    <span class="comment">% &#35745;&#31639;S</span>
+    S_num=min(min(R,G),B);
+    S_den=R+G+B;
+    S=1-3.*S_num./(S_den+eps);
+    H(S==0)=0;
+    <span class="comment">% &#35745;&#31639;I</span>
+    I=(R+G+B)/3;
+</pre><h2>&#35774;&#32622; H S I &#21508;&#20010;&#20998;&#37327;&#31995;&#25968;<a name="5"></a></h2><pre class="codeinput">    <span class="keyword">if</span> nargin==4
+        H=varargin{2}*H;
+        S=varargin{3}*S;
+        I=varargin{4}*I;
+    <span class="keyword">end</span>
+    <span class="comment">% H &#20026;&#22797;&#25968;&#65292;&#21462;&#27169;</span>
+    H=abs(H);
+</pre><h2>&#36755;&#20986;<a name="6"></a></h2><p>out=[HSI,H,S,I];</p><pre class="codeinput">    <span class="keyword">switch</span> nargout
+        <span class="keyword">case</span> 1
+            varargout{1}=cat(3,H,S,I);
+        <span class="keyword">case</span> 3
+            varargout{1}=H;
+            varargout{2}=S;
+            varargout{3}=I;
+        <span class="keyword">case</span> 4
+            varargout{1}=cat(3,H,S,I);
+            varargout{2}=H;
+            varargout{3}=S;
+            varargout{4}=I;
+    <span class="keyword">end</span>
+</pre></div><!--
+##### SOURCE BEGIN #####
+%% rgb格式转换成hsi格式
+%    
+%%
+
+
+function [varargout]=rgb2hsi(varargin)
+%% 检查第一个参数，必须为rgb图像数据
+    if ischar(varargin{1})
+        hs=msgbox('参数不合法！','通知','warn');
+        ht=findobj(hs,'type','text');
+        set(ht,'FontSize',11);
+        % 等待确定
+        uiwait(hs);
+        return 
+    end
+    
+%% 提取R G B 分量
+%im2double()和double()函数的区别：
+%im2double()将图像数据转换为double类型后将其量化到[0 1]区间内 
+%double() 只是提高数据精度，并未量化到[0 1]之间
+    rgb=im2double(varargin{1});
+    R=rgb(:,:,1);
+    G=rgb(:,:,2);
+    B=rgb(:,:,3);
+    
+%% 计算 H S I
+    % 计算H
+    H_num=(R-G)+(R-B)/2;
+    H_den=sqrt((R-G).^2+(R-B).*(G-B));
+    H=acos(H_num./(H_den+eps)); % 添加eps函数，防止分母为零
+    H(B>G)=2*pi-H(B>G);    
+    H=H/(2*pi);                 % 将H 范围归一化为[0 1]  
+    % 计算S
+    S_num=min(min(R,G),B);
+    S_den=R+G+B;
+    S=1-3.*S_num./(S_den+eps);    
+    H(S==0)=0;
+    % 计算I
+    I=(R+G+B)/3;
+    
+%% 设置 H S I 各个分量系数
+    if nargin==4
+        H=varargin{2}*H;
+        S=varargin{3}*S;
+        I=varargin{4}*I;
+    end  
+    % H 为复数，取模
+    H=abs(H);
+    
+%% 输出
+% out=[HSI,H,S,I];
+    switch nargout
+        case 1
+            varargout{1}=cat(3,H,S,I);
+        case 3
+            varargout{1}=H;
+            varargout{2}=S;
+            varargout{3}=I;
+        case 4
+            varargout{1}=cat(3,H,S,I);
+            varargout{2}=H;
+            varargout{3}=S;
+            varargout{4}=I;
+    end
+##### SOURCE END #####
+--></body></html>

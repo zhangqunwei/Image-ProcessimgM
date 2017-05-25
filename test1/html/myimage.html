@@ -1,0 +1,246 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+<!--logo图标-->
+<link rel="icon"  href="..\..\favicon.ico"/>
+<!-- 在收藏夹中显示图标 -->
+<link rel="Bookmark"href="..\..\favicon.ico">
+
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>myimage</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-05-25"><meta name="DC.source" content="myimage.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:15%; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#000; line-height:140%; background:#ADEBFF none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:16px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Matlab中对图像的简单操作</h1><h2>Contents</h2><div><ul><li><a href="#2">1.&#35835;&#20837;&#22270;&#20687;&#25991;&#20214;&#24182;&#29992; &#8220;whos&#8221;&#22312;&#21629;&#20196;&#31383;&#21475;&#26174;&#31034;&#20854;&#22270;&#20687;&#20869;&#23481;</a></li><li><a href="#5">2.&#33719;&#21462; 'ngc6543a.jpg'&#30340;&#22270;&#20687;&#20449;&#24687;</a></li><li><a href="#7">3.&#22312;4&#20010;&#31383;&#21475;&#20013;&#20998;&#21035;&#26174;&#31034;4&#24133;&#19981;&#21516;&#31867;&#22411;&#30340;&#22270;&#20687;</a></li><li><a href="#12">4.&#23558;&#22810;&#24103;&#22270;&#20687;&#38453;&#21015;mri.mat&#30340;&#25152;&#26377;&#24103;&#22270;&#20687;&#20197;&#26041;&#38453;&#24418;&#24335;&#26174;&#31034;&#22312;&#21516;&#19968;&#22270;&#20687;&#31383;&#21475;</a></li><li><a href="#13">5.&#20351;&#29992;zoom&#21644;colorbar&#21629;&#20196;</a></li><li><a href="#14">6.&#20998;&#21035;&#29992;imread&#21644;load&#21629;&#20196;&#26174;&#31034;&#20004;&#24133;&#22270;&#20687;&#22312;&#21516;&#19968;&#20010;&#22270;&#20687;&#31383;&#21475;</a></li><li><a href="#15">7.&#20351;&#29992;dither&#12289;gray2ind&#12289;grayslice&#12289;ind2gray&#12289;rgb2gray&#12289;rgb2ind&#12289;im2bw&#12289;ind2rgb&#12289;mat2gray&#32534;&#20889;9&#20010;&#20989;&#25968;</a></li></ul></div><pre class="codeinput">clc
+clear
+</pre><h2>1.&#35835;&#20837;&#22270;&#20687;&#25991;&#20214;&#24182;&#29992; &#8220;whos&#8221;&#22312;&#21629;&#20196;&#31383;&#21475;&#26174;&#31034;&#20854;&#22270;&#20687;&#20869;&#23481;<a name="2"></a></h2><p><b>&#35835;&#20837;&#22270;&#20687;</b></p><pre class="codeinput">I01=imread(<span class="string">'cameraman.tif'</span>,<span class="string">'tif'</span>);
+I02=imread(<span class="string">'ngc6543a.jpg'</span>,<span class="string">'jpg'</span>);
+</pre><p><b>&#29992; &#8220;whos&#8221;&#22312;&#21629;&#20196;&#31383;&#21475;&#26174;&#31034;&#20854;&#22270;&#20687;&#20869;&#23481;</b></p><pre class="codeinput">whos
+</pre><pre class="codeoutput">  Name        Size                 Bytes  Class    Attributes
+
+  I01       256x256                65536  uint8              
+  I02       650x600x3            1170000  uint8              
+
+</pre><h2>2.&#33719;&#21462; 'ngc6543a.jpg'&#30340;&#22270;&#20687;&#20449;&#24687;<a name="5"></a></h2><pre class="codeinput">I02info=imfinfo(<span class="string">'ngc6543a.jpg'</span>,<span class="string">'jpg'</span>);
+</pre><p><b>&#21629;&#20196;&#31383;&#21475;&#26597;&#30475;&#22270;&#20687;&#20449;&#24687;</b></p><pre class="codeinput">I02info
+</pre><pre class="codeoutput">
+I02info = 
+
+           Filename: 'D:\MATLAB\R2016a\toolbox\matlab\demos\ngc6543a.jpg'
+        FileModDate: '01-Oct-1996 16:19:44'
+           FileSize: 27387
+             Format: 'jpg'
+      FormatVersion: ''
+              Width: 600
+             Height: 650
+           BitDepth: 24
+          ColorType: 'truecolor'
+    FormatSignature: ''
+    NumberOfSamples: 3
+       CodingMethod: 'Huffman'
+      CodingProcess: 'Sequential'
+            Comment: {1x1 cell}
+
+</pre><h2>3.&#22312;4&#20010;&#31383;&#21475;&#20013;&#20998;&#21035;&#26174;&#31034;4&#24133;&#19981;&#21516;&#31867;&#22411;&#30340;&#22270;&#20687;<a name="7"></a></h2><p><b>&#28784;&#24230;&#22270;&#20687;</b></p><pre class="codeinput">figure(1)
+imshow(<span class="string">'cameraman.tif'</span>);title(<span class="string">'&#28784;&#24230;&#22270;&#20687;'</span>);
+</pre><img vspace="5" hspace="5" src="myimage_01.png" alt=""> <p><b>&#32034;&#24341;&#22270;&#20687;</b></p><pre class="codeinput">figure(2)
+imshow(<span class="string">'forest.tif'</span>);title(<span class="string">'&#32034;&#24341;&#22270;&#20687;'</span>);
+</pre><img vspace="5" hspace="5" src="myimage_02.png" alt=""> <p><b>&#30495;&#24425;&#33394;&#22270;&#20687;</b></p><pre class="codeinput">figure(3)
+imshow(<span class="string">'yellowlily.jpg'</span>);title(<span class="string">'&#30495;&#24425;&#33394;&#22270;&#20687;'</span>);
+</pre><pre class="codeoutput">&#35686;&#21578;: &#22270;&#20687;&#22826;&#22823;&#65292;&#26080;&#27861;&#22312;&#23631;&#24149;&#19978;&#26174;&#31034;&#65307;&#23558;&#20197; 33% &#26174;&#31034; 
+</pre><img vspace="5" hspace="5" src="myimage_03.png" alt=""> <p><b>&#20108;&#20540;&#22270;&#20687;</b></p><pre class="codeinput">figure(4)
+imshow(<span class="string">'circles.png'</span>);title(<span class="string">'&#20108;&#20540;&#22270;&#20687;'</span>);
+</pre><img vspace="5" hspace="5" src="myimage_04.png" alt=""> <h2>4.&#23558;&#22810;&#24103;&#22270;&#20687;&#38453;&#21015;mri.mat&#30340;&#25152;&#26377;&#24103;&#22270;&#20687;&#20197;&#26041;&#38453;&#24418;&#24335;&#26174;&#31034;&#22312;&#21516;&#19968;&#22270;&#20687;&#31383;&#21475;<a name="12"></a></h2><pre class="codeinput">mri=uint8(zeros(128,128,1,27));
+<span class="comment">% *&#25226;&#27599;&#19968;&#24103;&#35835;&#20837;&#20869;&#23384;&#20013;*</span>
+<span class="keyword">for</span> frame=1:27
+[mri(:,:,:,frame),map]=imread(<span class="string">'mri.tif'</span>,frame);
+<span class="keyword">end</span>
+montage(mri,map);title(<span class="string">'montage&#22810;&#24103;&#22270;&#20687;&#26174;&#31034;'</span>);
+</pre><pre class="codeoutput">&#35686;&#21578;: &#22270;&#20687;&#22826;&#22823;&#65292;&#26080;&#27861;&#22312;&#23631;&#24149;&#19978;&#26174;&#31034;&#65307;&#23558;&#20197; 67% &#26174;&#31034; 
+</pre><img vspace="5" hspace="5" src="myimage_05.png" alt=""> <h2>5.&#20351;&#29992;zoom&#21644;colorbar&#21629;&#20196;<a name="13"></a></h2><pre class="codeinput">figure(5)
+imshow(<span class="string">'coins.png'</span>);title(<span class="string">'&#20351;&#29992;zoom&#21644;colorbar&#21629;&#20196;'</span>);
+zoom <span class="string">on</span>
+colorbar(<span class="string">'vert'</span>)
+colorbar(<span class="string">'hotiz'</span>)
+</pre><img vspace="5" hspace="5" src="myimage_06.png" alt=""> <h2>6.&#20998;&#21035;&#29992;imread&#21644;load&#21629;&#20196;&#26174;&#31034;&#20004;&#24133;&#22270;&#20687;&#22312;&#21516;&#19968;&#20010;&#22270;&#20687;&#31383;&#21475;<a name="14"></a></h2><pre class="codeinput">figure(6)
+load <span class="string">trees.mat</span>
+subplot(121);subimage(X,map);title(<span class="string">'load'</span>);
+[X2,map2]=imread(<span class="string">'forest.tif'</span>);
+subplot(122);subimage(X2,map2);title(<span class="string">'imread'</span>);
+</pre><img vspace="5" hspace="5" src="myimage_07.png" alt=""> <h2>7.&#20351;&#29992;dither&#12289;gray2ind&#12289;grayslice&#12289;ind2gray&#12289;rgb2gray&#12289;rgb2ind&#12289;im2bw&#12289;ind2rgb&#12289;mat2gray&#32534;&#20889;9&#20010;&#20989;&#25968;<a name="15"></a></h2><p><b>dither</b></p><pre class="codeinput">figure(7);title(<span class="string">'dither'</span>);
+RGB=imread(<span class="string">'autumn.tif'</span>);
+subplot(2,2,1);
+subimage(RGB);
+load <span class="string">chess</span>;
+subplot(2,2,2);
+subimage(X,map);
+Y=dither(RGB,map);
+subplot(2,2,3);
+subimage(Y,map);
+</pre><img vspace="5" hspace="5" src="myimage_08.png" alt=""> <p><b>gray2ind</b></p><pre class="codeinput">figure(8);
+I=imread(<span class="string">'pout.tif'</span>);
+imshow(I);title(<span class="string">'&#21407;&#22270;'</span>);
+[X1,map1]=gray2ind(I,128);
+[X2,map2]=gray2ind(I,16);
+figure(9)
+imshow(X1,map1);title(<span class="string">'gray2ind 128'</span>);
+figure(10)
+imshow(X2,map2);title(<span class="string">'gray2ind 16'</span>);
+</pre><img vspace="5" hspace="5" src="myimage_09.png" alt=""> <img vspace="5" hspace="5" src="myimage_10.png" alt=""> <img vspace="5" hspace="5" src="myimage_11.png" alt=""> <p><b>&#20854;&#20313;&#20989;&#25968;&#31867;&#20284;&#65292;&#30452;&#25509;&#35843;&#29992;&#21363;&#21487;&#12290;&#19981;&#25026;&#26102;&#21487;&#26597;&#30475;Matlab&#30340;&#24110;&#21161;</b></p></div><!--
+##### SOURCE BEGIN #####
+clc
+clear
+%% 1.读入图像文件并用 “whos”在命令窗口显示其图像内容
+
+%% 
+% *读入图像*
+I01=imread('cameraman.tif','tif');
+I02=imread('ngc6543a.jpg','jpg');
+%%
+% *用 “whos”在命令窗口显示其图像内容*
+whos
+
+
+
+%% 2.获取 'ngc6543a.jpg'的图像信息
+I02info=imfinfo('ngc6543a.jpg','jpg');
+%%
+% *命令窗口查看图像信息*
+I02info
+
+%% 3.在4个窗口中分别显示4幅不同类型的图像
+
+%%
+% *灰度图像*
+figure(1)
+imshow('cameraman.tif');title('灰度图像');
+%%
+% *索引图像*
+figure(2)
+imshow('forest.tif');title('索引图像');
+%%
+% *真彩色图像*
+figure(3)
+imshow('yellowlily.jpg');title('真彩色图像');
+%%
+% *二值图像*
+figure(4)
+imshow('circles.png');title('二值图像');
+
+%% 4.将多帧图像阵列mri.mat的所有帧图像以方阵形式显示在同一图像窗口
+mri=uint8(zeros(128,128,1,27));
+% *把每一帧读入内存中*
+for frame=1:27
+[mri(:,:,:,frame),map]=imread('mri.tif',frame);
+end
+montage(mri,map);title('montage多帧图像显示');
+
+%% 5.使用zoom和colorbar命令
+figure(5)
+imshow('coins.png');title('使用zoom和colorbar命令');
+zoom on
+colorbar('vert')
+colorbar('hotiz')
+
+%% 6.分别用imread和load命令显示两幅图像在同一个图像窗口
+figure(6)
+load trees.mat
+subplot(121);subimage(X,map);title('load');
+[X2,map2]=imread('forest.tif');
+subplot(122);subimage(X2,map2);title('imread');
+
+%% 7.使用dither、gray2ind、grayslice、ind2gray、rgb2gray、rgb2ind、im2bw、ind2rgb、mat2gray编写9个函数
+
+%%
+% *dither*
+figure(7);title('dither');
+RGB=imread('autumn.tif');
+subplot(2,2,1);
+subimage(RGB);
+load chess;
+subplot(2,2,2);
+subimage(X,map);
+Y=dither(RGB,map);
+subplot(2,2,3);
+subimage(Y,map);
+
+%%
+% *gray2ind*
+figure(8);
+I=imread('pout.tif');
+imshow(I);title('原图');
+[X1,map1]=gray2ind(I,128);
+[X2,map2]=gray2ind(I,16);
+figure(9)
+imshow(X1,map1);title('gray2ind 128');
+figure(10)
+imshow(X2,map2);title('gray2ind 16');
+
+%%
+% *其余函数类似，直接调用即可。不懂时可查看Matlab的帮助*
+
+
+
+##### SOURCE END #####
+--></body></html>

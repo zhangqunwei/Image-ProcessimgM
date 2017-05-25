@@ -108,7 +108,12 @@ imshow(<span class="string">'cameraman.tif'</span>);title(<span class="string">'
 imshow(<span class="string">'forest.tif'</span>);title(<span class="string">'&#32034;&#24341;&#22270;&#20687;'</span>);
 </pre><img vspace="5" hspace="5" src="myimage_02.png" alt=""> <p><b>&#30495;&#24425;&#33394;&#22270;&#20687;</b></p><pre class="codeinput">figure(3)
 imshow(<span class="string">'yellowlily.jpg'</span>);title(<span class="string">'&#30495;&#24425;&#33394;&#22270;&#20687;'</span>);
-</pre><pre class="codeoutput">&#35686;&#21578;: &#22270;&#20687;&#22826;&#22823;&#65292;&#26080;&#27861;&#22312;&#23631;&#24149;&#19978;&#26174;&#31034;&#65307;&#23558;&#20197; 33% &#26174;&#31034; 
+</pre>
+
+<p>注意：Matlab R2016a版已经删除了判断图像类型的库函数，所以此处直接从图像属性中的位深度来大致判断，对于索引图像无法判断。</p>
+<img width="100%"style="float:center" src="https://zhangqunwei.github.io/ImageProcessing_test/test1/html/1.bmp" alt="判断图像类型" />
+
+<pre class="codeoutput">&#35686;&#21578;: &#22270;&#20687;&#22826;&#22823;&#65292;&#26080;&#27861;&#22312;&#23631;&#24149;&#19978;&#26174;&#31034;&#65307;&#23558;&#20197; 33% &#26174;&#31034; 
 </pre><img vspace="5" hspace="5" src="myimage_03.png" alt=""> <p><b>&#20108;&#20540;&#22270;&#20687;</b></p><pre class="codeinput">figure(4)
 imshow(<span class="string">'circles.png'</span>);title(<span class="string">'&#20108;&#20540;&#22270;&#20687;'</span>);
 </pre><img vspace="5" hspace="5" src="myimage_04.png" alt=""> <h2>4.&#23558;&#22810;&#24103;&#22270;&#20687;&#38453;&#21015;mri.mat&#30340;&#25152;&#26377;&#24103;&#22270;&#20687;&#20197;&#26041;&#38453;&#24418;&#24335;&#26174;&#31034;&#22312;&#21516;&#19968;&#22270;&#20687;&#31383;&#21475;<a name="12"></a></h2><pre class="codeinput">mri=uint8(zeros(128,128,1,27));

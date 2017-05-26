@@ -1,0 +1,275 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>test52</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-05-26"><meta name="DC.source" content="test52.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:15%; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#000; line-height:140%; background:#ADEBFF none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:16px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">2.&#23558;&#32034;&#24341;&#22270;&#20687;'flowers.mat'&#36827;&#34892;&#26059;&#36716;</a></li><li><a href="#3">&#21021;&#22987;&#21270;</a></li><li><a href="#4">(1) &#39034;&#26102;&#38024;&#26059;&#36716;30&deg;</a></li><li><a href="#5">(2) &#36870;&#26102;&#38024;&#26059;&#36716;60&deg;</a></li><li><a href="#6">(3) &#36870;&#26102;&#38024;&#26059;&#36716;90&deg;</a></li><li><a href="#7">(4) &#29992;&#21442;&#25968;'crop'&#36870;&#26102;&#38024;&#26059;&#36716;60&deg;</a></li></ul></div><pre class="codeinput"><span class="keyword">function</span> test52
+</pre><h2>2.&#23558;&#32034;&#24341;&#22270;&#20687;'flowers.mat'&#36827;&#34892;&#26059;&#36716;<a name="2"></a></h2><pre class="language-matlab">(1) &#39034;&#26102;&#38024;&#26059;&#36716;30&deg;&#65307;
+(2) &#36870;&#26102;&#38024;&#26059;&#36716;60&deg;&#65307;
+(3) &#36870;&#26102;&#38024;&#26059;&#36716;90&deg;&#65307;
+(4) &#29992;&#21442;&#25968;<span class="string">'crop'</span>&#36870;&#26102;&#38024;&#26059;&#36716;60&deg;&#12290;
+</pre><h2>&#21021;&#22987;&#21270;<a name="3"></a></h2><pre class="codeinput">clc;        <span class="comment">% &#28165;&#38500;&#21629;&#20196;&#31383;&#21475;</span>
+clf;        <span class="comment">% &#28165;&#38500;&#22270;&#24418;&#31383;&#21475;</span>
+clear       <span class="comment">% &#28165;&#38500;&#24037;&#20316;&#21306;</span>
+
+<span class="comment">% &#21152;&#36733;&#22270;&#20687;</span>
+load <span class="string">wmandril.mat</span>
+subimage(floor(X),map);title(<span class="string">'&#21407;&#22270;'</span>);
+</pre><img vspace="5" hspace="5" src="test52_01.png" alt=""> <h2>(1) &#39034;&#26102;&#38024;&#26059;&#36716;30&deg;<a name="4"></a></h2><pre class="codeinput">figure(<span class="string">'name'</span>,<span class="string">'&#39034;&#26102;&#38024;&#26059;&#36716;30&deg;'</span>,<span class="string">'NumberTitle'</span>,<span class="string">'off'</span>);
+<span class="comment">% &#26041;&#27861;&#19968;: &#26368;&#36817;&#37051;&#27861;&#25554;&#34917;(nearest)</span>
+<span class="comment">% &#35828;&#26126;:   &#36755;&#20986;&#20687;&#32032;&#28857;&#30340;&#36171;&#20540;&#20026;&#24403;&#21069;&#28857;&#30340;&#20687;&#32032;&#28857;</span>
+X1=imrotate(X,-30,<span class="string">'nearest'</span>);
+subplot(1,3,1)
+subimage(floor(X1),map);
+title(<span class="string">'&#26368;&#36817;&#37051;&#27861;&#25554;&#34917;'</span>);
+
+<span class="comment">% &#26041;&#27861;&#20108;: &#21452;&#32447;&#24615;&#25554;&#34917;(bilinear)</span>
+<span class="comment">% &#35828;&#26126;  : &#36755;&#20986;&#20687;&#32032;&#28857;&#30340;&#36171;&#20540;&#20026;2x2&#30697;&#38453;&#25152;&#21253;&#21547;&#30340;&#26377;&#25928;&#28857;&#30340;&#21152;&#26435;&#24179;&#22343;&#20540;</span>
+X2=imrotate(X,-30,<span class="string">'bilinear'</span>);
+subplot(1,3,2)
+subimage(floor(X2),map);
+title(<span class="string">'&#21452;&#32447;&#24615;&#25554;&#34917;'</span>);
+
+<span class="comment">% &#26041;&#27861;&#19977;: &#21452;&#31435;&#26041;&#25554;&#34917;(bicubic)</span>
+<span class="comment">% &#35828;&#26126;  : &#36755;&#20986;&#20687;&#32032;&#28857;&#30340;&#36171;&#20540;&#20026;4x4&#30697;&#38453;&#25152;&#21253;&#21547;&#30340;&#26377;&#25928;&#28857;&#30340;&#21152;&#26435;&#24179;&#22343;&#20540;</span>
+X3=imrotate(X,-30,<span class="string">'bicubic'</span>);
+subplot(1,3,3)
+subimage(floor(X3),map);
+title(<span class="string">'&#21452;&#31435;&#26041;&#25554;&#34917;'</span>);
+</pre><img vspace="5" hspace="5" src="test52_02.png" alt=""> <h2>(2) &#36870;&#26102;&#38024;&#26059;&#36716;60&deg;<a name="5"></a></h2><pre class="codeinput">figure(<span class="string">'name'</span>,<span class="string">'&#36870;&#26102;&#38024;&#26059;&#36716;60&deg;'</span>,<span class="string">'NumberTitle'</span>,<span class="string">'off'</span>);
+<span class="comment">% &#26041;&#27861;&#19968;: &#26368;&#36817;&#37051;&#27861;&#25554;&#34917;(nearest)</span>
+<span class="comment">% &#35828;&#26126;:   &#36755;&#20986;&#20687;&#32032;&#28857;&#30340;&#36171;&#20540;&#20026;&#24403;&#21069;&#28857;&#30340;&#20687;&#32032;&#28857;</span>
+X1=imrotate(X,60,<span class="string">'nearest'</span>);
+subplot(1,3,1)
+subimage(floor(X1),map);
+title(<span class="string">'&#26368;&#36817;&#37051;&#27861;&#25554;&#34917;'</span>);
+
+<span class="comment">% &#26041;&#27861;&#20108;: &#21452;&#32447;&#24615;&#25554;&#34917;(bilinear)</span>
+<span class="comment">% &#35828;&#26126;  : &#36755;&#20986;&#20687;&#32032;&#28857;&#30340;&#36171;&#20540;&#20026;2x2&#30697;&#38453;&#25152;&#21253;&#21547;&#30340;&#26377;&#25928;&#28857;&#30340;&#21152;&#26435;&#24179;&#22343;&#20540;</span>
+X2=imrotate(X,60,<span class="string">'bilinear'</span>);
+subplot(1,3,2)
+subimage(floor(X2),map);
+title(<span class="string">'&#21452;&#32447;&#24615;&#25554;&#34917;'</span>);
+
+<span class="comment">% &#26041;&#27861;&#19977;: &#21452;&#31435;&#26041;&#25554;&#34917;(bicubic)</span>
+<span class="comment">% &#35828;&#26126;  : &#36755;&#20986;&#20687;&#32032;&#28857;&#30340;&#36171;&#20540;&#20026;4x4&#30697;&#38453;&#25152;&#21253;&#21547;&#30340;&#26377;&#25928;&#28857;&#30340;&#21152;&#26435;&#24179;&#22343;&#20540;</span>
+X3=imrotate(X,60,<span class="string">'bicubic'</span>);
+subplot(1,3,3)
+subimage(floor(X3),map);
+title(<span class="string">'&#21452;&#31435;&#26041;&#25554;&#34917;'</span>);
+</pre><img vspace="5" hspace="5" src="test52_03.png" alt=""> <h2>(3) &#36870;&#26102;&#38024;&#26059;&#36716;90&deg;<a name="6"></a></h2><pre class="codeinput">figure(<span class="string">'name'</span>,<span class="string">'&#36870;&#26102;&#38024;&#26059;&#36716;90&deg;'</span>,<span class="string">'NumberTitle'</span>,<span class="string">'off'</span>);
+<span class="comment">% &#26041;&#27861;&#19968;: &#26368;&#36817;&#37051;&#27861;&#25554;&#34917;(nearest)</span>
+<span class="comment">% &#35828;&#26126;:   &#36755;&#20986;&#20687;&#32032;&#28857;&#30340;&#36171;&#20540;&#20026;&#24403;&#21069;&#28857;&#30340;&#20687;&#32032;&#28857;</span>
+X1=imrotate(X,90,<span class="string">'nearest'</span>);
+subplot(1,3,1)
+subimage(floor(X1),map);
+title(<span class="string">'&#26368;&#36817;&#37051;&#27861;&#25554;&#34917;'</span>);
+
+<span class="comment">% &#26041;&#27861;&#20108;: &#21452;&#32447;&#24615;&#25554;&#34917;(bilinear)</span>
+<span class="comment">% &#35828;&#26126;  : &#36755;&#20986;&#20687;&#32032;&#28857;&#30340;&#36171;&#20540;&#20026;2x2&#30697;&#38453;&#25152;&#21253;&#21547;&#30340;&#26377;&#25928;&#28857;&#30340;&#21152;&#26435;&#24179;&#22343;&#20540;</span>
+X2=imrotate(X,90,<span class="string">'bilinear'</span>);
+subplot(1,3,2)
+subimage(floor(X2),map);
+title(<span class="string">'&#21452;&#32447;&#24615;&#25554;&#34917;'</span>);
+
+<span class="comment">% &#26041;&#27861;&#19977;: &#21452;&#31435;&#26041;&#25554;&#34917;(bicubic)</span>
+<span class="comment">% &#35828;&#26126;  : &#36755;&#20986;&#20687;&#32032;&#28857;&#30340;&#36171;&#20540;&#20026;4x4&#30697;&#38453;&#25152;&#21253;&#21547;&#30340;&#26377;&#25928;&#28857;&#30340;&#21152;&#26435;&#24179;&#22343;&#20540;</span>
+X3=imrotate(X,90,<span class="string">'bicubic'</span>);
+subplot(1,3,3)
+subimage(floor(X3),map);
+title(<span class="string">'&#21452;&#31435;&#26041;&#25554;&#34917;'</span>);
+</pre><img vspace="5" hspace="5" src="test52_04.png" alt=""> <h2>(4) &#29992;&#21442;&#25968;'crop'&#36870;&#26102;&#38024;&#26059;&#36716;60&deg;<a name="7"></a></h2><pre class="codeinput">figure(<span class="string">'name'</span>,<span class="string">'&#29992;&#21442;&#25968;crop&#36870;&#26102;&#38024;&#26059;&#36716;60&deg;'</span>,<span class="string">'NumberTitle'</span>,<span class="string">'off'</span>);
+<span class="comment">% &#26041;&#27861;&#19968;: &#26368;&#36817;&#37051;&#27861;&#25554;&#34917;(nearest)</span>
+<span class="comment">% &#35828;&#26126;:   &#36755;&#20986;&#20687;&#32032;&#28857;&#30340;&#36171;&#20540;&#20026;&#24403;&#21069;&#28857;&#30340;&#20687;&#32032;&#28857;</span>
+X1=imrotate(X,60,<span class="string">'nearest'</span>,<span class="string">'crop'</span>);
+subplot(1,3,1)
+subimage(floor(X1),map);
+title(<span class="string">'crop-&#26368;&#36817;&#37051;&#27861;&#25554;&#34917;'</span>);
+
+<span class="comment">% &#26041;&#27861;&#20108;: &#21452;&#32447;&#24615;&#25554;&#34917;(bilinear)</span>
+<span class="comment">% &#35828;&#26126;  : &#36755;&#20986;&#20687;&#32032;&#28857;&#30340;&#36171;&#20540;&#20026;2x2&#30697;&#38453;&#25152;&#21253;&#21547;&#30340;&#26377;&#25928;&#28857;&#30340;&#21152;&#26435;&#24179;&#22343;&#20540;</span>
+X2=imrotate(X,60,<span class="string">'bilinear'</span>,<span class="string">'crop'</span>);
+subplot(1,3,2)
+subimage(floor(X2),map);
+title(<span class="string">'crop-&#21452;&#32447;&#24615;&#25554;&#34917;'</span>);
+
+<span class="comment">% &#26041;&#27861;&#19977;: &#21452;&#31435;&#26041;&#25554;&#34917;(bicubic)</span>
+<span class="comment">% &#35828;&#26126;  : &#36755;&#20986;&#20687;&#32032;&#28857;&#30340;&#36171;&#20540;&#20026;4x4&#30697;&#38453;&#25152;&#21253;&#21547;&#30340;&#26377;&#25928;&#28857;&#30340;&#21152;&#26435;&#24179;&#22343;&#20540;</span>
+X3=imrotate(X,60,<span class="string">'bicubic'</span>);
+subplot(1,3,3)
+subimage(floor(X3),map);
+title(<span class="string">'crop-&#21452;&#31435;&#26041;&#25554;&#34917;'</span>);
+</pre><img vspace="5" hspace="5" src="test52_05.png" alt=""></div><!--
+##### SOURCE BEGIN #####
+function test52
+%% 2.将索引图像'flowers.mat'进行旋转
+%   (1) 顺时针旋转30°；
+%   (2) 逆时针旋转60°；
+%   (3) 逆时针旋转90°；
+%   (4) 用参数'crop'逆时针旋转60°。
+
+%% 初始化
+clc;        % 清除命令窗口
+clf;        % 清除图形窗口
+clear       % 清除工作区
+
+% 加载图像
+load wmandril.mat 
+subimage(floor(X),map);title('原图');
+
+%% (1) 顺时针旋转30°
+figure('name','顺时针旋转30°','NumberTitle','off');
+% 方法一: 最近邻法插补(nearest)
+% 说明:   输出像素点的赋值为当前点的像素点
+X1=imrotate(X,-30,'nearest');
+subplot(1,3,1)
+subimage(floor(X1),map);
+title('最近邻法插补');
+
+% 方法二: 双线性插补(bilinear)
+% 说明  : 输出像素点的赋值为2x2矩阵所包含的有效点的加权平均值
+X2=imrotate(X,-30,'bilinear');
+subplot(1,3,2)
+subimage(floor(X2),map);
+title('双线性插补');
+
+% 方法三: 双立方插补(bicubic)
+% 说明  : 输出像素点的赋值为4x4矩阵所包含的有效点的加权平均值
+X3=imrotate(X,-30,'bicubic');
+subplot(1,3,3)
+subimage(floor(X3),map);
+title('双立方插补');
+
+%% (2) 逆时针旋转60°
+figure('name','逆时针旋转60°','NumberTitle','off');
+% 方法一: 最近邻法插补(nearest)
+% 说明:   输出像素点的赋值为当前点的像素点
+X1=imrotate(X,60,'nearest');
+subplot(1,3,1)
+subimage(floor(X1),map);
+title('最近邻法插补');
+
+% 方法二: 双线性插补(bilinear)
+% 说明  : 输出像素点的赋值为2x2矩阵所包含的有效点的加权平均值
+X2=imrotate(X,60,'bilinear');
+subplot(1,3,2)
+subimage(floor(X2),map);
+title('双线性插补');
+
+% 方法三: 双立方插补(bicubic)
+% 说明  : 输出像素点的赋值为4x4矩阵所包含的有效点的加权平均值
+X3=imrotate(X,60,'bicubic');
+subplot(1,3,3)
+subimage(floor(X3),map);
+title('双立方插补');
+
+%% (3) 逆时针旋转90°
+figure('name','逆时针旋转90°','NumberTitle','off');
+% 方法一: 最近邻法插补(nearest)
+% 说明:   输出像素点的赋值为当前点的像素点
+X1=imrotate(X,90,'nearest');
+subplot(1,3,1)
+subimage(floor(X1),map);
+title('最近邻法插补');
+
+% 方法二: 双线性插补(bilinear)
+% 说明  : 输出像素点的赋值为2x2矩阵所包含的有效点的加权平均值
+X2=imrotate(X,90,'bilinear');
+subplot(1,3,2)
+subimage(floor(X2),map);
+title('双线性插补');
+
+% 方法三: 双立方插补(bicubic)
+% 说明  : 输出像素点的赋值为4x4矩阵所包含的有效点的加权平均值
+X3=imrotate(X,90,'bicubic');
+subplot(1,3,3)
+subimage(floor(X3),map);
+title('双立方插补');
+
+%% (4) 用参数'crop'逆时针旋转60°
+figure('name','用参数crop逆时针旋转60°','NumberTitle','off');
+% 方法一: 最近邻法插补(nearest)
+% 说明:   输出像素点的赋值为当前点的像素点
+X1=imrotate(X,60,'nearest','crop');
+subplot(1,3,1)
+subimage(floor(X1),map);
+title('crop-最近邻法插补');
+
+% 方法二: 双线性插补(bilinear)
+% 说明  : 输出像素点的赋值为2x2矩阵所包含的有效点的加权平均值
+X2=imrotate(X,60,'bilinear','crop');
+subplot(1,3,2)
+subimage(floor(X2),map);
+title('crop-双线性插补');
+
+% 方法三: 双立方插补(bicubic)
+% 说明  : 输出像素点的赋值为4x4矩阵所包含的有效点的加权平均值
+X3=imrotate(X,60,'bicubic');
+subplot(1,3,3)
+subimage(floor(X3),map);
+title('crop-双立方插补');
+##### SOURCE END #####
+--></body></html>

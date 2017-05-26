@@ -1,0 +1,107 @@
+function test52
+%% 2.将索引图像'flowers.mat'进行旋转
+%   (1) 顺时针旋转30°；
+%   (2) 逆时针旋转60°；
+%   (3) 逆时针旋转90°；
+%   (4) 用参数'crop'逆时针旋转60°。
+
+%% 初始化
+clc;        % 清除命令窗口
+clf;        % 清除图形窗口
+clear       % 清除工作区
+
+% 加载图像
+load wmandril.mat 
+subimage(floor(X),map);title('原图');
+
+%% (1) 顺时针旋转30°
+figure('name','顺时针旋转30°','NumberTitle','off');
+% 方法一: 最近邻法插补(nearest)
+% 说明:   输出像素点的赋值为当前点的像素点
+X1=imrotate(X,-30,'nearest');
+subplot(1,3,1)
+subimage(floor(X1),map);
+title('最近邻法插补');
+
+% 方法二: 双线性插补(bilinear)
+% 说明  : 输出像素点的赋值为2x2矩阵所包含的有效点的加权平均值
+X2=imrotate(X,-30,'bilinear');
+subplot(1,3,2)
+subimage(floor(X2),map);
+title('双线性插补');
+
+% 方法三: 双立方插补(bicubic)
+% 说明  : 输出像素点的赋值为4x4矩阵所包含的有效点的加权平均值
+X3=imrotate(X,-30,'bicubic');
+subplot(1,3,3)
+subimage(floor(X3),map);
+title('双立方插补');
+
+%% (2) 逆时针旋转60°
+figure('name','逆时针旋转60°','NumberTitle','off');
+% 方法一: 最近邻法插补(nearest)
+% 说明:   输出像素点的赋值为当前点的像素点
+X1=imrotate(X,60,'nearest');
+subplot(1,3,1)
+subimage(floor(X1),map);
+title('最近邻法插补');
+
+% 方法二: 双线性插补(bilinear)
+% 说明  : 输出像素点的赋值为2x2矩阵所包含的有效点的加权平均值
+X2=imrotate(X,60,'bilinear');
+subplot(1,3,2)
+subimage(floor(X2),map);
+title('双线性插补');
+
+% 方法三: 双立方插补(bicubic)
+% 说明  : 输出像素点的赋值为4x4矩阵所包含的有效点的加权平均值
+X3=imrotate(X,60,'bicubic');
+subplot(1,3,3)
+subimage(floor(X3),map);
+title('双立方插补');
+
+%% (3) 逆时针旋转90°
+figure('name','逆时针旋转90°','NumberTitle','off');
+% 方法一: 最近邻法插补(nearest)
+% 说明:   输出像素点的赋值为当前点的像素点
+X1=imrotate(X,90,'nearest');
+subplot(1,3,1)
+subimage(floor(X1),map);
+title('最近邻法插补');
+
+% 方法二: 双线性插补(bilinear)
+% 说明  : 输出像素点的赋值为2x2矩阵所包含的有效点的加权平均值
+X2=imrotate(X,90,'bilinear');
+subplot(1,3,2)
+subimage(floor(X2),map);
+title('双线性插补');
+
+% 方法三: 双立方插补(bicubic)
+% 说明  : 输出像素点的赋值为4x4矩阵所包含的有效点的加权平均值
+X3=imrotate(X,90,'bicubic');
+subplot(1,3,3)
+subimage(floor(X3),map);
+title('双立方插补');
+
+%% (4) 用参数'crop'逆时针旋转60°
+figure('name','用参数crop逆时针旋转60°','NumberTitle','off');
+% 方法一: 最近邻法插补(nearest)
+% 说明:   输出像素点的赋值为当前点的像素点
+X1=imrotate(X,60,'nearest','crop');
+subplot(1,3,1)
+subimage(floor(X1),map);
+title('crop-最近邻法插补');
+
+% 方法二: 双线性插补(bilinear)
+% 说明  : 输出像素点的赋值为2x2矩阵所包含的有效点的加权平均值
+X2=imrotate(X,60,'bilinear','crop');
+subplot(1,3,2)
+subimage(floor(X2),map);
+title('crop-双线性插补');
+
+% 方法三: 双立方插补(bicubic)
+% 说明  : 输出像素点的赋值为4x4矩阵所包含的有效点的加权平均值
+X3=imrotate(X,60,'bicubic');
+subplot(1,3,3)
+subimage(floor(X3),map);
+title('crop-双立方插补');
